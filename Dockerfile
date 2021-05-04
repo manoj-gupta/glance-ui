@@ -8,7 +8,7 @@ RUN apk --no-cache add git
 RUN git clone https://github.com/manoj-gupta/glance-ui.git
 
 # set working directory
-WORKDIR glance-ui
+WORKDIR /glance-ui
 
 # install app dependencies
 RUN npm install
