@@ -2,26 +2,43 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Running glance-ui
+# Installation
 
-### Development mode
-Install following packages:
-* `npm install axios`
-* `npm install semantic-ui-react`
+## Getting Started
 
-In the project directory, run:
-* `npm start`
+- You need to have Node and NPM installed on your computer.
+- Installing Node automatically comes with npm.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Clone
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone this project to your local machine https://github.com/manoj-gupta/glance-ui.git
 
-### Docker mode
+## Setup (without Docker)
 
-Build docker image using
-* `docker build -t glance-ui .`
+- Installing the project dependencies
 
-Run docker image using
-* `docker run -it -p 3000:3000 --name glance-ui glance-ui`
+```
+$ npm install
+```
+
+- Start the project
+
+```
+$ npm start
+```
+
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Docker mode
+
+- Build docker image using
+
+```
+docker build -t glance-ui .
+```
+
+- Run docker image using
+
+```
+docker run -it -p 3000:3000 --name glance-ui glance-ui
+```

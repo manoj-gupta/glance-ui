@@ -1,7 +1,8 @@
 import React from "react";
+import TicTacToe from "../components/games/tic-tac-toe";
 
 const Games = () => {
-  return <div>Games</div>;
+  return <TicTacToe />;
 };
 
 export default Games;
