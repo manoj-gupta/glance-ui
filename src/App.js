@@ -1,16 +1,30 @@
 import React from "react";
-import './App.css';
-import { Container } from "semantic-ui-react";
-import ToDoList from "./To-Do-List";
+import Navigation from "./components/Navigation";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import routes from "./routes";
+import { useStyles } from "./styles";
 
-function App() {
+const App = () => {
+  const classes = useStyles();
   return (
-    <div>
-      <Container>
-        <ToDoList />
-      </Container>
+    <div className={classes.appRoot}>
+      <Router>
+        <Navigation />
+        <div>
+          <div className={classes.appBarSpacer}></div>
+          <Switch>
+            {routes.map((route, index) => {
+              return (
+                <Route exact key={index} path={route.path}>
+                  {route.component}
+                </Route>
+              );
+            })}
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
