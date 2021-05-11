@@ -1,9 +1,7 @@
 import React from "react";
-import ToDoList from "../components/ToDoList";
 
 const Dashboard = () => {
-  // return <div>Dashboard</div>;
-  return <ToDoList />;
+  return <div>Dashboard</div>;
 };
 
 export default Dashboard;

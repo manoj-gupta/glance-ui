@@ -17,6 +17,9 @@ import Settings from "./pages/Settings";
 import GamesIcon from "./assets/GamesIcon.svg";
 import GamesIconActive from "./assets/GamesIconActive.svg";
 import Games from "./pages/Games";
+import TodoIcon from "./assets/TodoIcon.svg";
+import TodoIconActive from "./assets/TodoIconActive.svg";
+import Todos from "./pages/Todos";
 
 const routes = [
   {
@@ -25,6 +28,13 @@ const routes = [
     icon: DashboardIcon,
     activeIcon: DashboardIconActive,
     component: Dashboard,
+  },
+  {
+    label: "Todos",
+    path: "/todos",
+    icon: TodoIcon,
+    activeIcon: TodoIconActive,
+    component: Todos,
   },
   {
     label: "Accounts",
