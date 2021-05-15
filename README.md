@@ -13,7 +13,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Clone this project to your local machine https://github.com/manoj-gupta/glance-ui.git
 
-## Setup (without Docker)
+## Development Environment
+
+### Setup (without Docker)
 
 - Installing the project dependencies
 
@@ -29,16 +31,72 @@ $ npm start
 
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Docker mode
+### Docker mode
 
 - Build docker image using
 
 ```
-docker build -t glance-ui .
+docker build -f Dockerfile.dev -t glance-ui .
 ```
 
 - Run docker image using
 
 ```
-docker run -it -p 3000:3000 --name glance-ui glance-ui
+docker run --env-file ./.env -v $PWD/src:/glance-ui/src:ro --rm -d -p 3000:3000 --name glance-ui glance-ui
+```
+
+- Container shell
+
+```
+docker exec -it glance-ui /bin/sh
+```
+
+- Kill container
+
+```
+docker rm glance-ui -f
+```
+
+### Using docker-compose
+
+#### Start
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build
+```
+
+#### Stop
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-dev.yml down
+```
+
+## Production environment
+
+### Docker mode
+
+- Build docker image using
+
+```
+docker build -f Dockerfile.prod -t glance-ui-prod .
+```
+
+- Run docker image using
+
+```
+docker run --env-file ./.env --rm -d -p 8000:80 --name glance-ui-prod glance-ui-prod
+```
+
+### using docker compose
+
+#### start
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build
+```
+
+#### stop
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-prod.yml down
 ```

@@ -1,17 +1,20 @@
 # pull base image
 FROM node:15-alpine
 
-# add git
-RUN apk --no-cache add git
-
-# pull repo
-RUN git clone https://github.com/manoj-gupta/glance-ui.git
-
 # set working directory
 WORKDIR /glance-ui
 
+# copy package.json file
+COPY package.json .
+
 # install app dependencies
 RUN npm install
+
+# copy app
+COPY . .
+
+# default ENV
+ENV REACT_APP_NAME=localhost
 
 # Expose port
 EXPOSE 3000

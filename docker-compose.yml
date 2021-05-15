@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  glance-ui:
+    # stdin_open: true
+    # tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    # environment: 
+    #   - CHOKIDAR_USEPOLLING=true
+    #   - REACT_APP_NAME=glance-master.local
+    # env_file:
+    #   - ./.env
+
