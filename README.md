@@ -59,13 +59,13 @@ docker rm glance-ui -f
 
 ### Using docker-compose
 
-#### Start
+- Start
 
 ```
 docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build
 ```
 
-#### Stop
+- Stop
 
 ```
 docker-compose -f docker-compose.yml -f docker-compose-dev.yml down
@@ -89,13 +89,13 @@ docker run --env-file ./.env --rm -d -p 8000:80 --name glance-ui-prod glance-ui-
 
 ### using docker compose
 
-#### start
+- Start
 
 ```
 docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build
 ```
 
-#### stop
+- Stop
 
 ```
 docker-compose -f docker-compose.yml -f docker-compose-prod.yml down
