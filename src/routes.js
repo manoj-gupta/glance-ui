@@ -9,17 +9,19 @@ import SettingsIconActive from "./assets/SettingsIconActive.svg";
 import SignOutIcon from "./assets/SignOutIcon.svg";
 import AccountsIcon from "./assets/AccountsIcon.svg";
 import AccountsIconActive from "./assets/AccountsIconActive.svg";
+import GamesIcon from "./assets/GamesIcon.svg";
+import GamesIconActive from "./assets/GamesIconActive.svg";
+import TodoIcon from "./assets/TodoIcon.svg";
+import TodoIconActive from "./assets/TodoIconActive.svg";
+
 import Dashboard from "./pages/Dashboard";
 import Accounts from "./pages/Accounts";
 import Transactions from "./pages/Transactions";
 import Secure from "./pages/Secure";
 import Settings from "./pages/Settings";
-import GamesIcon from "./assets/GamesIcon.svg";
-import GamesIconActive from "./assets/GamesIconActive.svg";
 import Games from "./pages/Games";
-import TodoIcon from "./assets/TodoIcon.svg";
-import TodoIconActive from "./assets/TodoIconActive.svg";
 import Todos from "./pages/Todos";
+import Logout from "./pages/Logout";
 
 const routes = [
   {
@@ -76,6 +78,28 @@ const routes = [
     path: "/sign-out",
     icon: SignOutIcon,
     activeIcon: SignOutIcon,
+    component: Logout,
+  },
+];
+
+export const login_routes = [
+  // {
+  //   label: "Home",
+  //   path: "/",
+  //   icon: DashboardIcon,
+  //   activeIcon: DashboardIconActive,
+  // },
+  {
+    label: "Login",
+    path: "/login",
+    icon: GamesIcon,
+    activeIcon: GamesIconActive,
+  },
+  {
+    label: "Register",
+    path: "/register",
+    icon: TodoIcon,
+    activeIcon: TodoIconActive,
   },
 ];
 

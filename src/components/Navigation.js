@@ -23,14 +23,19 @@ import clsx from "clsx";
 
 // internal
 import MenuItem from "./MenuItem";
-import routes from "../routes";
+import routes, { login_routes } from "../routes";
 import { useStyles } from "../styles";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const [open, setOpen] = useState(true);
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xs"));
+
+  let cur_routes = routes;
+  if (props.name === "") {
+    cur_routes = login_routes;
+  }
 
   const toggleNavigation = () => {
     setOpen(!open);
@@ -87,7 +92,7 @@ const Navigation = () => {
           />
         </div>
         <List className={classes.navigationList}>
-          {routes.map((route, index) => {
+          {cur_routes.map((route, index) => {
             return (
               <React.Fragment key={index}>
                 {route.path === "/sign-out" && (
