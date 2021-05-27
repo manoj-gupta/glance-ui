@@ -15,7 +15,7 @@ function Logout(props) {
         console.log("Logout Success");
         console.log(res);
         props.setName("");
-        return <Redirect to="/login" />;
+        return <Redirect to="/sign-in" />;
       });
   };
 

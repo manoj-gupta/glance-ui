@@ -67,4 +67,14 @@ export const useStyles = makeStyles((theme) => ({
   menuItemActive: {
     backgroundColor: "#EBEBEC",
   },
+  paperStyle: {
+    padding: 20,
+    height: "70vh",
+    width: 280,
+    margin: "20px auto",
+  },
+  avatarStyle: {
+    backgroundColor: "#1bbd7e",
+  },
+  btnStyle: { margin: "8px 0" },
 }));

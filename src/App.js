@@ -41,11 +41,11 @@ function App() {
       <main className="form-signin">
         <Route path="/" exact component={() => <Home name={name} />} />
         <Route
-          path="/login"
+          path="/sign-in"
           component={() => <Login setName={setName} endpoint={endpoint} />}
         />
         <Route
-          path="/register"
+          path="/sign-up"
           component={() => <Register endpoint={endpoint} />}
         />
       </main>

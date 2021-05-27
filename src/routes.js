@@ -83,21 +83,21 @@ const routes = [
 ];
 
 export const login_routes = [
-  // {
-  //   label: "Home",
-  //   path: "/",
-  //   icon: DashboardIcon,
-  //   activeIcon: DashboardIconActive,
-  // },
   {
-    label: "Login",
-    path: "/login",
+    label: "Home",
+    path: "/",
+    icon: DashboardIcon,
+    activeIcon: DashboardIconActive,
+  },
+  {
+    label: "Sign In",
+    path: "/sign-in",
     icon: GamesIcon,
     activeIcon: GamesIconActive,
   },
   {
-    label: "Register",
-    path: "/register",
+    label: "Sign Up",
+    path: "/sign-up",
     icon: TodoIcon,
     activeIcon: TodoIconActive,
   },

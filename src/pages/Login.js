@@ -1,11 +1,26 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import { useStyles } from "../styles";
+
+import {
+  Avatar,
+  Grid,
+  Paper,
+  TextField,
+  Button,
+  Typography,
+  Link,
+} from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
+  const classes = useStyles();
 
   const submit = async (event) => {
     event.preventDefault();
@@ -39,26 +54,51 @@ const Login = (props) => {
 
   return (
     <form onSubmit={submit}>
-      <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-      <input
-        type="email"
-        className="form-control"
-        placeholder="Email address"
-        required
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <input
-        type="password"
-        className="form-control"
-        placeholder="Password"
-        required
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <button className="w-100 btn btn-lg btn-primary" type="submit">
-        Sign in
-      </button>
+      <Grid>
+        <Paper elevation={10} className={classes.paperStyle}>
+          <Grid align="center">
+            <Avatar className={classes.avatarStyle}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <h2>Sign In</h2>
+          </Grid>
+          <TextField
+            label="Email"
+            placeholder="Enter Email"
+            fullWidth
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            label="Password"
+            placeholder="Enter Password"
+            type="password"
+            fullWidth
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            className={classes.btnStyle}
+            fullWidth
+          >
+            Sign in
+          </Button>
+          <Typography>
+            <Link href="tbd">Forgot password ?</Link>
+          </Typography>
+          <Typography>
+            {" "}
+            Do you have an account ?<Link href="/sign-up">Sign Up</Link>
+          </Typography>
+        </Paper>
+      </Grid>
     </form>
   );
 };
